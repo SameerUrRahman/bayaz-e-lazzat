@@ -6,6 +6,8 @@ export const STYLE_URL = MAPTILER_KEY
   ? `https://api.maptiler.com/maps/streets-v2/style.json?key=${MAPTILER_KEY}`
   : 'https://tiles.openfreemap.org/styles/liberty';
 
+export const TERRAIN_EXAGGERATION = 3.4;
+
 export const OVERVIEW = {
   center: [78.4650, 17.3920],
   zoom: 11.6,
@@ -75,7 +77,7 @@ export function addTerrain(map) {
   const demUrl = `https://api.maptiler.com/tiles/terrain-rgb-v2/tiles.json?key=${MAPTILER_KEY}`;
 
   map.addSource('terrain-dem', { type: 'raster-dem', url: demUrl });
-  map.setTerrain({ source: 'terrain-dem', exaggeration: 3.4 });
+  map.setTerrain({ source: 'terrain-dem', exaggeration: TERRAIN_EXAGGERATION });
 
   // Hillshade needs its own DEM source; slot it under the first label layer
   // so the relief shading sits beneath text like ink on aged paper.

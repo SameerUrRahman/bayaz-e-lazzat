@@ -36,6 +36,7 @@ export default function MapView({
       container: containerRef.current,
       style: STYLE_URL,
       ...OVERVIEW,
+      maxPitch: 72, // the chase cam rides at 66°; default cap is 60
       attributionControl: { compact: true },
     });
     map.addControl(

@@ -46,6 +46,24 @@ export function bearingBetween(a, b) {
   return (Math.atan2(y, x) * 180) / Math.PI;
 }
 
+// Point reached from `start` heading `bearingDeg` for `dist` metres
+export function destinationPoint(start, bearingDeg, dist) {
+  const δ = dist / R;
+  const θ = toRad(bearingDeg);
+  const φ1 = toRad(start[1]);
+  const λ1 = toRad(start[0]);
+  const φ2 = Math.asin(
+    Math.sin(φ1) * Math.cos(δ) + Math.cos(φ1) * Math.sin(δ) * Math.cos(θ)
+  );
+  const λ2 =
+    λ1 +
+    Math.atan2(
+      Math.sin(θ) * Math.sin(δ) * Math.cos(φ1),
+      Math.cos(δ) - Math.sin(φ1) * Math.sin(φ2)
+    );
+  return [(λ2 * 180) / Math.PI, (φ2 * 180) / Math.PI];
+}
+
 // Cumulative distance at each vertex of a line
 export function measureLine(coords) {
   const cum = [0];
