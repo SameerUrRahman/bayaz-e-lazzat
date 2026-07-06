@@ -1,0 +1,122 @@
+[
+  {
+    "id": "nimrah",
+    "name": "Nimrah Café & Bakery",
+    "urdu": "نمرہ کیفے",
+    "lat": 17.3617,
+    "lng": 78.4744,
+    "cuisine": "Irani Café",
+    "area": "Old City",
+    "rating": 5,
+    "review": "Irani chai and Osmania biscuits in the shadow of Charminar — the city's oldest ritual.",
+    "mapsQuery": "Nimrah Cafe and Bakery Charminar Hyderabad"
+  },
+  {
+    "id": "shadab",
+    "name": "Hotel Shadab",
+    "urdu": "ہوٹل شاداب",
+    "lat": 17.3705,
+    "lng": 78.4737,
+    "cuisine": "Hyderabadi",
+    "area": "Old City",
+    "rating": 5,
+    "review": "Mirror-ceilinged biryani institution; the mutton biryani sets the city's benchmark.",
+    "mapsQuery": "Hotel Shadab Ghansi Bazaar Hyderabad"
+  },
+  {
+    "id": "govind",
+    "name": "Govind Dosa",
+    "urdu": "گووند ڈوسہ",
+    "lat": 17.3641,
+    "lng": 78.4736,
+    "cuisine": "Street Food",
+    "area": "Old City",
+    "rating": 4,
+    "review": "Dawn queues for butter-drenched tawa dosas; go before 9 am or don't go at all.",
+    "mapsQuery": "Govind Dosa Charminar Hyderabad"
+  },
+  {
+    "id": "milan",
+    "name": "Milan Juice Centre",
+    "urdu": "میلن جوس سنٹر",
+    "lat": 17.3868,
+    "lng": 78.4710,
+    "cuisine": "Street Food",
+    "area": "Central",
+    "rating": 4,
+    "review": "Seasonal fruit buried in malai — the anthology's sweetest single page.",
+    "mapsQuery": "Milan Juice Centre Mozamjahi Market Hyderabad"
+  },
+  {
+    "id": "karachi",
+    "name": "Karachi Bakery",
+    "urdu": "کراچی بیکری",
+    "lat": 17.3866,
+    "lng": 78.4718,
+    "cuisine": "Bakery & Sweets",
+    "area": "Central",
+    "rating": 4,
+    "review": "Fruit biscuits from the 1953 original branch — never leave without a box.",
+    "mapsQuery": "Karachi Bakery Moazzam Jahi Market Hyderabad"
+  },
+  {
+    "id": "niloufer",
+    "name": "Café Niloufer",
+    "urdu": "کیفے نیلوفر",
+    "lat": 17.4043,
+    "lng": 78.4600,
+    "cuisine": "Irani Café",
+    "area": "Central",
+    "rating": 5,
+    "review": "Bun maska and elaichi chai; the evening crowd spills out onto the street.",
+    "mapsQuery": "Cafe Niloufer Lakdikapul Hyderabad"
+  },
+  {
+    "id": "bawarchi",
+    "name": "Bawarchi",
+    "urdu": "باورچی",
+    "lat": 17.4069,
+    "lng": 78.4988,
+    "cuisine": "Hyderabadi",
+    "area": "North",
+    "rating": 4,
+    "review": "High-volume, high-heat dum biryani that somehow never drops the standard.",
+    "mapsQuery": "Bawarchi Restaurant RTC X Roads Hyderabad"
+  },
+  {
+    "id": "paradise",
+    "name": "Paradise",
+    "urdu": "پیراڈائز",
+    "lat": 17.4416,
+    "lng": 78.4886,
+    "cuisine": "Hyderabadi",
+    "area": "North",
+    "rating": 3,
+    "review": "The famous gateway biryani — tourists start here, locals argue about it.",
+    "mapsQuery": "Paradise Restaurant Secunderabad"
+  },
+  {
+    "id": "shahghouse",
+    "name": "Shah Ghouse Café",
+    "urdu": "شاہ غوث کیفے",
+    "lat": 17.3990,
+    "lng": 78.4090,
+    "cuisine": "Hyderabadi",
+    "area": "West",
+    "rating": 5,
+    "review": "Ramzan haleem legend; the biryani holds its own the rest of the year.",
+    "mapsQuery": "Shah Ghouse Cafe Tolichowki Hyderabad"
+  },
+  {
+    "id": "chichas",
+    "name": "Chicha's",
+    "urdu": "چچا کا",
+    "lat": 17.3960,
+    "lng": 78.4470,
+    "cuisine": "Hyderabadi",
+    "area": "West",
+    "rating": 4,
+    "review": "Home-style Hyderabadi khana — talawa gosht and khatti dal like a nani's kitchen.",
+    "mapsQuery": "Chichas Restaurant Humayun Nagar Hyderabad"
+  }
+]

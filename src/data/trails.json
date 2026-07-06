@@ -1,0 +1,13 @@
+[
+  {
+    "id": "old-city-run",
+    "name": "Old City Street Food Run",
+    "description": "A dawn-to-dusk crawl through the lanes around Charminar — breakfast dosa, Irani chai, benchmark biryani, and a malai finish.",
+    "stops": [
+      { "restaurantId": "govind", "note": "Start at dawn: butter dosa hot off the tawa." },
+      { "restaurantId": "nimrah", "note": "Irani chai and Osmania biscuits as the Charminar crowd builds." },
+      { "restaurantId": "shadab", "note": "Biryani lunch under the mirror ceilings." },
+      { "restaurantId": "milan", "note": "Cross the river to finish: fruit and malai." }
+    ]
+  }
+]
