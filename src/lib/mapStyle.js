@@ -75,7 +75,7 @@ export function addTerrain(map) {
   const demUrl = `https://api.maptiler.com/tiles/terrain-rgb-v2/tiles.json?key=${MAPTILER_KEY}`;
 
   map.addSource('terrain-dem', { type: 'raster-dem', url: demUrl });
-  map.setTerrain({ source: 'terrain-dem', exaggeration: 2.2 });
+  map.setTerrain({ source: 'terrain-dem', exaggeration: 3.4 });
 
   // Hillshade needs its own DEM source; slot it under the first label layer
   // so the relief shading sits beneath text like ink on aged paper.
@@ -87,10 +87,10 @@ export function addTerrain(map) {
       type: 'hillshade',
       source: 'hillshade-dem',
       paint: {
-        'hillshade-shadow-color': '#8a6f52',
-        'hillshade-highlight-color': '#fff8e1',
+        'hillshade-shadow-color': '#75583c',
+        'hillshade-highlight-color': '#fffbe8',
         'hillshade-accent-color': '#b08d3e',
-        'hillshade-exaggeration': 0.55,
+        'hillshade-exaggeration': 0.8,
       },
     },
     firstSymbol ? firstSymbol.id : undefined
