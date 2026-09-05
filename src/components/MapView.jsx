@@ -5,6 +5,7 @@ import { STYLE_URL, OVERVIEW, applyParchment, addTerrain } from '../lib/mapStyle
 import { runFlyThrough } from '../lib/flyThrough';
 import { fetchRoute, haversine } from '../lib/routing';
 import { driveAlong } from '../lib/driveAlong';
+import { resetInk } from '../lib/inkTrail';
 
 const TRAIL_SOURCE = 'trail-line';
 
@@ -21,6 +22,7 @@ export default function MapView({
   const markersRef = useRef({});
   const driveRef = useRef(null); // cancel fn for an in-flight selection drive
   const driveToken = useRef(0); // invalidates stale async route fetches
+  const lastSpotRef = useRef(null); // [lng, lat] of the previous selection — rides depart from here
   const [ready, setReady] = useState(false);
 
   const stopDrive = () => {
@@ -86,14 +88,21 @@ export default function MapView({
     for (const [id, marker] of Object.entries(markersRef.current)) {
       marker.getElement().classList.toggle('selected', id === selectedId);
     }
-    if (!selectedId || touring) return;
+    if (!selectedId) return;
     const marker = markersRef.current[selectedId];
     if (!marker) return;
+    const to = marker.getLngLat();
+    const prev = lastSpotRef.current;
+    lastSpotRef.current = [to.lng, to.lat];
+    if (touring) return; // the tour drives itself, but remember its stops
 
     stopDrive();
+    resetInk(map); // previous journey's ink belongs to the previous journey
     const token = driveToken.current;
-    const to = marker.getLngLat();
-    const from = map.getCenter();
+    // Depart from the previous spot, not the screen center — mid-flight
+    // clicks and panned views were making rides start from arbitrary roads
+    const center = map.getCenter();
+    const from = prev ? { lng: prev[0], lat: prev[1] } : center;
     const crowFlies = haversine([from.lng, from.lat], [to.lng, to.lat]);
 
     const flyFallback = () =>

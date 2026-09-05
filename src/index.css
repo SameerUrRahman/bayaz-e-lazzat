@@ -49,6 +49,14 @@ body {
   background: var(--color-deccan);
 }
 
+/* Traveler arrow that rides the routes; SVG inside rotates via the marker */
+.rider {
+  width: 30px;
+  height: 30px;
+  filter: drop-shadow(1px 2px 2px rgba(69, 50, 34, 0.45));
+  pointer-events: none;
+}
+
 /* ---- Parchment card texture ---- */
 .parchment-card {
   background:

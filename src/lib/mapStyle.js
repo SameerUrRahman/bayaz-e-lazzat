@@ -6,7 +6,8 @@ export const STYLE_URL = MAPTILER_KEY
   ? `https://api.maptiler.com/maps/streets-v2/style.json?key=${MAPTILER_KEY}`
   : 'https://tiles.openfreemap.org/styles/liberty';
 
-export const TERRAIN_EXAGGERATION = 3.4;
+// 3.4 made the Deccan roll enough that the chase cam visibly bobbed
+export const TERRAIN_EXAGGERATION = 2.2;
 
 export const OVERVIEW = {
   center: [78.4650, 17.3920],
@@ -21,6 +22,7 @@ const PALETTE = {
   water: '#a9bfba',
   green: '#dcd4a8',
   building: '#e0cda4',
+  buildingWall: '#d3b98c',
   roadMinor: '#c7ab84',
   roadMajor: '#a8845c',
   boundary: '#9c7a58',
@@ -51,7 +53,11 @@ export function applyParchment(map) {
         map.setPaintProperty(id, 'fill-color', color);
         map.setPaintProperty(id, 'fill-outline-color', color);
       } else if (type === 'fill-extrusion') {
-        map.setPaintProperty(id, 'fill-extrusion-color', PALETTE.building);
+        // MapTiler ships this at 0.4 opacity in near-ground color — the
+        // buildings render but read flat. Deepen + solidify so walls show.
+        map.setPaintProperty(id, 'fill-extrusion-color', PALETTE.buildingWall);
+        map.setPaintProperty(id, 'fill-extrusion-opacity', 0.85);
+        map.setLayerZoomRange(id, 14, 24);
       } else if (type === 'line') {
         let color = PALETTE.roadMinor;
         if (/water/.test(key)) color = PALETTE.water;

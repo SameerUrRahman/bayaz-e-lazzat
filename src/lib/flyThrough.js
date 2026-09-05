@@ -1,6 +1,7 @@
 import { OVERVIEW } from './mapStyle';
 import { fetchRoute } from './routing';
 import { driveAlong } from './driveAlong';
+import { resetInk } from './inkTrail';
 
 const once = (map, event) => new Promise((resolve) => map.once(event, resolve));
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -40,6 +41,8 @@ export function runFlyThrough(map, stops, { onArrive, onEnd }) {
   };
 
   (async () => {
+    // Fresh journey: legs of this tour accumulate into one ink line
+    resetInk(map);
     // Aerial approach to the first stop
     prefetchLeg(0);
     const first = stops[0];
